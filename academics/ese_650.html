@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../bootstrap/docs-assets/ico/favicon.png">
+
+    <title>Samarth's ESE650</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="{{ page.base_url }}docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="../bootstrap/examples/carousel/carousel.css" rel="stylesheet">
+  </head>
+
+  <body>
+      
+      <!-- NAVBAR
+================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://seas.upenn.edu/~samarthb">Samarth</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://robocv.blogspot.com">Blog</a></li>
+            <li class="active"><a href="index.html">Acedemics</a></li>
+            <li class="active"><a href="../cv.pdf">CV</a></li>
+            <li class="active"><a href="../extracurricular/index.html">Everything else</a></li>
+            <li class="active"><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <div class="container">
+          <div class="row">
+                <h1>Learning in Robotics - ESE 650</h1>
+          </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+       <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Color image panorama using orientation tracking</h2>
+          <p class="lead">For this project, images were recoreded using a camera mounted on a plate with an IMU. The challenge was to organize the images into a panorama using Unscented Kalman Filter based orientation tracking.</p>
+          <p><a class="btn btn-lg btn-primary" href="https://bitbucket.org/samarthb/kalman-orientation-tracking/wiki/Home" role="button">Learn more</a></p>
+        </div>
+        <div class="col-md-5">
+            <iframe width="500" height="500" src="http://www.youtube.com/embed/KxkIF6efAJA?start=37" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <hr class="featurette-divider">
+      
+      <div class="row featurette">
+        <div class="col-md-5">
+            <a href="https://bitbucket.org/samarthb/ese650-project4/wiki/Home"><img class="featurette-image img-responsive" src="ese650_slam.jpg" alt="SLAM"></a>
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Simultaneous Localization and Mapping using a particle filter</h2>
+          <p class="lead">This project used LIDAR and wheel odometry data recorded using a mobile robot to create a planar map of the path followed by the robot and simultaneously localized the robot in that map. After the map was constructed, RANSAC was used to extract the ground plane from Kinect disparity data and the ground plane pixels were overlaid on the SLAM planar map.</p>
+          <p><a class="btn btn-lg btn-primary" href="https://bitbucket.org/samarthb/ese650-project4/wiki/Home" role="button">Learn more</a></p>
+        </div>
+      </div>
+      <hr class="featurette-divider">
+      
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Point Cloud registration for 3D mapping</h2>
+          <p class="lead">In this project I implemented an efficient 3D point-cloud registration pipeline based on 3D feature matching using the Point Cloud Library that could handle large differences in position and orientation between the two point clouds.</p>
+          <p><a class="btn btn-lg btn-primary" href="https://bitbucket.org/samarthb/3d-slam/wiki/Home" role="button">Learn more</a></p>
+        </div>
+        <div class="col-md-5">
+            <a href="https://bitbucket.org/samarthb/3d-slam/wiki/Home"><img class="featurette-image img-responsive" src="ese650_registration.jpg" alt="3d Point Cloud registration"></a>
+        </div>
+      </div>
+      <hr class="featurette-divider">
+      
+      <div class="row featurette">
+        <div class="col-md-5">
+            <a href="https://bitbucket.org/samarthb/ese650-project-5/wiki/Home"><img class="featurette-image img-responsive" src="ese650_imitation.jpg" alt="Path planning using imitation learning"></a>
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Path planning for a robotic vehicle using imitation learning</h2>
+          <p class="lead">In this project I used imitation learning to learn a cost map on an aerial photograph for a robotic car travelling through a city and used the A* algorithm to plan the path for the car.</p>
+          <p><a class="btn btn-lg btn-primary" href="https://bitbucket.org/samarthb/ese650-project-5/wiki/Home" role="button">Learn more</a></p>
+        </div>
+      </div>
+      <hr class="featurette-divider">
+      
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Probabilistic color segmentation of images</h2>
+          <p class="lead">In this project I trained Gaussian Mixture Models to segment a red barrel out of color images under different illumination conditions.</p>
+          <p><a class="btn btn-lg btn-primary" href="https://bitbucket.org/samarthb/ese650-project-1/wiki/Home" role="button">Learn more</a></p>
+        </div>
+        <div class="col-md-5">
+            <a href="https://bitbucket.org/samarthb/ese650-project-1/wiki/Home"><img class="featurette-image img-responsive" src="ese650_color.jpg" alt="Probabilistic Color Segmentation"></a>
+        </div>
+      </div>
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="ese650_hmm.jpg" alt="Hidden Markov Models"></a>
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Gesture recognition using Hidden Markov Models</h2>
+          <p class="lead">In this project I recognized gestures from among a collection of 6 gestures using IMU data with the help of Hidden Markov Models. I first clustered the 6 channel IMU data into 20 clusters and then trained a different HMM for every gesture, using cross-validation for determining the number of hidden states.</p>
+        </div>
+      </div>
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; Samarth Manoj Brahmbhatt 2013</p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bootstrap/docs-assets/js/holder.js"></script>
+  </body>
+</html>

@@ -6,15 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="bootstrap/docs-assets/ico/favicon.png">
+    <link rel="shortcut icon" href="../bootstrap/docs-assets/ico/favicon.png">
 
     <title>Samarth's Academics</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="bootstrap/examples/jumbotron/jumbotron.css" rel="stylesheet">
+    <link href="../bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="{{ page.base_url }}docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -24,10 +21,178 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="../bootstrap/examples/carousel/carousel.css" rel="stylesheet">
   </head>
 
   <body>
-  Under construction!
-  </body>
+      
+      <!-- NAVBAR
+================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://seas.upenn.edu/~samarthb">Samarth</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://robocv.blogspot.com">Blog</a></li>
+            <li class="active"><a href="index.html">Acedemics</a></li>
+            <li class="active"><a href="../cv.pdf">CV</a></li>
+            <li class="active"><a href="../extracurricular/index.html">Everything else</a></li>
+            <li class="active"><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="data:image/png;base64," data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Example headline.</h1>
+              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="data:image/png;base64," data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="data:image/png;base64," data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container">
+
+       <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Research, Summer 2013. <span class="text-muted">Computer Vision</span></h2>
+          <p class="lead">We made GRASPY, Penn's PR2 robot detect and estimate the 6-DOF pose of household objects, all from one 2D image.</p>
+          <p><a class="btn btn-lg btn-primary" href="summer_2013.html" role="button">Learn more</a></p>
+        </div>
+        <div class="col-md-5">
+            <a href="summer_2013.html"><img class="featurette-image img-responsive" src="summer2013_featurette.jpg" alt="Vision Research"></a>
+        </div>
+      </div>
+      <hr class="featurette-divider">
+      
+      <div class="row featurette">
+        <div class="col-md-5">
+            <a href="robocup.html"><img class="featurette-image img-responsive" src="robocup.jpg" alt="Robocup"></a>
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">RoboCup Kid Size League, Summer 2013. <span class="text-muted">Eindhoven, The Netherlands</span></h2>
+          <p class="lead">Our Team DARwIN won the Humanoid Kid Size League world championships.</p>
+          <p><a class="btn btn-lg btn-primary" href="robocup.html" role="button">Learn more</a></p>
+        </div>
+      </div>
+      <hr class="featurette-divider">
+      
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Learning in Robotics. <span class="text-muted">ESE 650</span></h2>
+          <p class="lead">Projects in this class involved applying machine learning theory and software systems engineering to real-world robotics problems.</p>
+          <p><a class="btn btn-lg btn-primary" href="ese_650.html" role="button">Learn more</a></p>
+        </div>
+        <div class="col-md-5">
+            <a href="ese_650.html"><img class="featurette-image img-responsive" src="ese650_featurette.jpg" alt="Learning in Robotics"></a>
+        </div>
+      </div>
+      <hr class="featurette-divider">
+      
+      <div class="row featurette">
+        <div class="col-md-5">
+            <a href="cis_580.html"><img class="featurette-image img-responsive" src="cis580_featurette.jpg" alt="Machine Perception"></a>
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Machine Perception. <span class="text-muted">CIS 580</span></h2>
+          <p class="lead">This class discussed theoretical foundations of computer vision. The two class projects were an application of those theories to real-world vision problems.</p>
+          <p><a class="btn btn-lg btn-primary" href="cis_580.html" role="button">Learn more</a></p>
+        </div>
+      </div>
+      <hr class="featurette-divider">
+      
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Computer Vision and Computational Photography. <span class="text-muted">CIS 581</span></h2>
+          <p class="lead">This project-based class involved implementing existing vision algorithms for interesting fun tasks.</p>
+          <p><a class="btn btn-lg btn-primary" href="cis_581.html" role="button">Learn more</a></p>
+        </div>
+        <div class="col-md-5">
+            <a href="cis_581.html"><img class="featurette-image img-responsive" src="cis581_featurette.jpg" alt="Computer Vision and Computational Photography"></a>
+        </div>
+      </div>
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-5">
+            <a href="summer_2011.html"><img class="featurette-image img-responsive" src="summer2011_featurette.jpg" alt="Summer 2011"></a>
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Research, Summer 2011. <span class="text-muted">Robotic arm control using a Kinect sensor</span></h2>
+          <p class="lead">My summer internship at the University of Southern California is where it all started for me.</p>
+          <p><a class="btn btn-lg btn-primary" href="summer_2011.html" role="button">Learn more</a></p>
+        </div>
+      </div>
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; Samarth Manoj Brahmbhatt 2013</p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bootstrap/docs-assets/js/holder.js"></script>
+  </body>
 </html>
