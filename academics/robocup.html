@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../bootstrap/docs-assets/ico/favicon.png">
+
+    <title>Samarth - RoboCup</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="{{ page.base_url }}docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="../bootstrap/examples/carousel/jumbotron.css" rel="stylesheet">
+  </head>
+
+  <body>
+      
+      <!-- NAVBAR
+================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://seas.upenn.edu/~samarthb">Samarth</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://robocv.blogspot.com">Blog</a></li>
+            <li class="active"><a href="index.html">Acedemics</a></li>
+            <li class="active"><a href="../cv.pdf">CV</a></li>
+            <li class="active"><a href="../extracurricular/index.html">Everything else</a></li>
+            <li class="active"><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <div class="container">
+          <div class="row">
+              <h1>RoboCup</h1>
+          </div>
+      </div>
+    </div>
+
+    <div class="container">
+    <div class="row">
+    <p style="text-align:center"><img src="robocup_team.jpg" class="img-rounded"></p>
+
+    <p>University of Pennsylvania's RoboCup Humanoid Kid Size Team has been winning the international championships for three years in a row now. I joined the team in January 2013.</p>
+
+    <p>Senior team members <a href=http://www.seas.upenn.edu/~smcgill3/>Steve</a>, SJ, Yida, Larry and Aditya provided us newcomers with an excellent tutorial series and introduced us to the immense code-base. As we got more comfortable we were assigned with specialized tasks, because there were a lot of new challenges in the 2013 edition of the competition. The RoboCup Federation, to further its intention of developing a robotic soccer team capable of competing and winning against an international human team by 2050, introduced the following changes in rules:
+    <ul>
+        <li>The goal posts on both sides of the field would now be the same color</li>
+        <li>The localizing landmarks at the sides of the field would be removed</li>
+    </ul>
+
+    <p>This meant that robot localization was not quite difficult - if a robot fell down near the center of the field and got up, it would often be confused about its orientation (because the field now looked the same on both sides) and hence try to score own goals.</p>
+    <p>I was assigned the task of improving the particle-filter based localizing algorithm under guidance by SJ. We came up with a strategy in which the goal-keeper's ball estimate (which was relatively stable because it did not fall down too often) was used to disambiguate the orientation of a robot that fell down near the center of the field. This strategy came in handy quite a few times during the competition.</p>
+    <p>We ran a lot of simulation matches using the Webots software to develop and perfect the strategy:</p>
+    <p style="text-align:center"><img src="robocup1.png" width=960 height=540></p>
+    <p style="text-align:center"><img src="robocup2.png" width=960 height=540></p>
+    <p style="text-align:center"><img src="robocup3.png" width=960 height=540></p>
+    <p style="text-align:center"><img src="robocup4.png" width=960 height=540></p>
+    <br>The pictures above show a robot falling down, picking up the wrong orientation and then being corrected by the goal-keeper.</p>
+
+    <p>During the tournament I was also reponsible for making colortables, which are the look-up tables for color-based segmentation that we generate using our excellent color learning tool that uses Gaussian Mixture Models to classify colors into field, goalpos, ball, field lines etc.</p>
+
+          <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; Samarth Manoj Brahmbhatt 2013</p>
+      </footer>
+
+    </div>
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bootstrap/docs-assets/js/holder.js"></script>
+  </body>
+</html>
