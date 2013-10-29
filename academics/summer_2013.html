@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Samarth's Computer Vision Research</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="{{ page.base_url }}docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="../bootstrap/examples/carousel/jumbotron.css" rel="stylesheet">
+  </head>
+
+  <body>
+      
+      <!-- NAVBAR
+================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://seas.upenn.edu/~samarthb">Samarth</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://robocv.blogspot.com">Blog</a></li>
+            <li class="active"><a href="index.html">Acedemics</a></li>
+            <li class="active"><a href="../cv.pdf">CV</a></li>
+            <li class="active"><a href="../extracurricular/index.html">Everything else</a></li>
+            <li class="active"><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <div class="container">
+          <div class="row">
+              <h1>Detection and 6-DOF pose estimation of objects in cluttered scenes from 2D shape</h1>
+          </div>
+      </div>
+    </div>
+
+    <div class="container">
+    <div class="row">
+    <h1>What?</h1>
+    <p style="text-align:center"><img src="summer2013_top.jpg"></p>
+    <p>In the summer of 2013 I joined a Computer Vision research project under <a href=http://www.cis.upenn.edu/~kostas/>Dr. Kostas Daniilidis</a> at the <a href="https://www.grasp.upenn.edu/">GRASP laboratory</a>, University of Pennsylvania. For this project I worked with CS PhD students <a href="http://www.seas.upenn.edu/~menglong/">Menglong Zhu</a>, <a href="http://www.seas.upenn.edu/~codyp/">Cody Phillips</a>, <a href="https://fling.seas.upenn.edu/~zmen/cgi-bin/blog/?page_id=5">Mabel Zhang</a> and <a href="https://sites.google.com/site/yinfeiyang/">Yinfei Yang</a>. We also wrote a nice paper on the project and submitted it to the International Conference on Robotics and Automation 2014. The paper is currently under review.</p>
+    <p>In this project we argued successfully that the 2D shape of an object is a powerful piece of information and is enough to not only detect the object but also estimate its 6 degree-of-freedom pose in the 3D world with high accuracy. The figure above shows one such case, where the gastank has been detected and its 3D model has been projected on the image at the pose estimated by our system.</p>
+
+    <h1>How?</h1>
+    <p>Below, I describe the various stages of our system.</p>
+    <h2>Detection</h2>
+    <p>We use pre-computed 3D CAD models of the objects of interest to train Deformable Part Models of the silhouette of the objects. We have 16 such models, each with the object rendered at a different yaw pose. A Deformable Part Model, popularized by Pedro F. Felzenszwalb and his colleagues in their <a href="dpm_paper.pdf">PAMI paper</a>, is a technique to represent an object in terms of a 'root' and several parts. For example in the model of a face, the face on a higher scale might be the root whereas the eyes, nose, lips and ears at a lower scale might be parts. The root as well as parts are represented by their HOG features and the parts have a quadratic cost associated with the displacement of the parts with respect to the root. This way the model can account for minor inconsistencies in different instance of the same object. DPM based object detectors have been found to work quite well in practice. The figure below shows some object detection results, along with the models which match most closely with the detected object. A lower score is a better match.</p>
+    <p style="text-align:center">
+        <img src="dpm_detection1.png">
+        <img src="dpm_detection2.png">
+        <img src="dpm_detection3.png">
+    </p>
+
+    <h2>Pose estimation</h2>
+    <p>We then extract the silhouette of the detected object. This is done by first over-segmenting the image region in the detection bounding-box.</p>
+    <p style="text-align:center">
+        <img src="dpm_regions1.jpg" width="235" height="175">
+        <img src="dpm_regions2.jpg" width="235" height="175">
+        <img src="dpm_regions3.jpg" width="235" height="175">
+    </p>
+    <p>And then greedily merging the regions such that at each step the merged shape looks more and more like the 3D model's silhouette. Chordiogram features are used for shape comparison.</p>
+    <p style="text-align:center">
+        <img src="dpm_mask1.jpg">
+        <img src="dpm_mask2.jpg">
+        <img src="dpm_mask3.jpg">
+    </p>
+    <p>We then iteratively render the 3D model for the object in 3D world, each time estimating the change in pose which would make the silhouette of the rendered object match closer with the silhouette of the detected object. Some iteratons of this process are shown below. At the end of this process, the silhouettes match quite closely. The pose of the 3D model at this point is therefore the pose of the detected 3D object.</p>
+    <p style="text-align:center">
+        <img src="dpm_iter10.png" width=240 height=180>
+        <img src="dpm_iter11.png" width=240 height=180>
+        <img src="dpm_iter12.png" width=240 height=180>
+        <img src="dpm_iter13.png" width=240 height=180>
+        <img src="dpm_iter20.png" width=240 height=180>
+        <img src="dpm_iter21.png" width=240 height=180>
+        <img src="dpm_iter22.png" width=240 height=180>
+        <img src="dpm_iter23.png" width=240 height=180>
+        <img src="dpm_iter30.png" width=240 height=180>
+        <img src="dpm_iter31.png" width=240 height=180>
+        <img src="dpm_iter32.png" width=240 height=180>
+        <img src="dpm_iter33.png" width=240 height=180>
+    </p>
+    <h2>Projection and Gripping</h2>
+    <p>We use ROS and the PR2 robot to validate our system. The estimated pose is used to project the 3D model in front of the PR2 in RViz. The open-source grasping tool <a href="http://wiki.ros.org/graspit">graspit</a> is used to calculate good grasping points around this model. The PR2 then extends its hand to the calculated grasping point and grasps the object. A screen-shot from RViz is shown below, in which ground truth is provided by the PR2's laser scanner and the 3D model in green is projected at the estimated pose.</p>
+    <p style="text-align:center"><img src="summer2013_pr2.png" width=960 height=540></p>
+    <p>A video of a grasp:</p>
+    <iframe width="420" height="315" src="//www.youtube.com/embed/WMt1yqKjgwY" frameborder="0" allowfullscreen></iframe>
+          <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; Samarth Manoj Brahmbhatt 2013</p>
+      </footer>
+
+    </div>
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bootstrap/docs-assets/js/holder.js"></script>
+  </body>
+</html>
