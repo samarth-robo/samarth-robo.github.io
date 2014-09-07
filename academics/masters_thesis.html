@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Samarth - Masters' Thesis</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="{{ page.base_url }}docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="../bootstrap/examples/carousel/jumbotron.css" rel="stylesheet">
+  </head>
+
+  <body>
+      
+      <!-- NAVBAR
+================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://www.cc.gatech.edu/~sbrahmbh">Samarth</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://robocv.blogspot.com">Blog</a></li>
+            <li class="active"><a href="index.html">Acedemics</a></li>
+            <li class="active"><a href="../cv.pdf">CV</a></li>
+            <li class="active"><a href="../publications.html">Publications</a></li>
+            <li class="active"><a href="../extracurricular/index.html">Everything else</a></li>
+            <li class="active"><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <div class="container">
+          <div class="row">
+              <h1>Detecting Partially Occluded Objects</h1>
+          </div>
+      </div>
+    </div>
+
+    <div class="container">
+    <div class="row">
+    <p>While collecting resuts for the <a href="summer_2013.html" target="_blank">project</a> on estimating pose from a single RGB image, we observed that our object detection and pose estimation algorithm was quite sensitive to the object being occluded from the front. Pose estimation because it depended directly on the edges and object detection because it used the dense HOG description of the object outlines. Of course, part-based object detectors are somewhat robust to occlusion but it still lowers the detector score. Such detections are easily discarded when a strict threshold is imposed to get high precision. In fact, this is true for almost all the object detection and pose estimation algorithms out there.</p>
+
+    <p>So for my Masters' Thesis I researched strategies to detect objects in spite of (partial) frontal occlusion. This research was heavily influenced by the <a href="seg_aware.pdf" target="_blank">paper</a> on segmentation aware object detection by Tianshi Gao et. al. and Machine Learning community literature on Structural SVMs. I was able to detect objects occluded up to 60%, and also segment the inside of the bounding box into object vs. non-object categories. Using this approach to detect objects, I was able to show better or equal performance (on P-R curves) than the stock DPM object detector on my household object datasets.</p>
+
+    <p style="text-align:center"><img src="masters_thesis_output.png" class="img-rounded"></p>
+
+    <p>Details and algorithm descriptions can be found in my <a href="masters_thesis.pdf" target="_blank">thesis</a>. Broadly speaking, this is how it works:</p>
+    <ul>
+        <li>Labels for training images include the position of the top-left corner of the bounding box, and a vector of binary variables that indicates whether each HOG cell in the bounding box belongs to the object or not. This algorithm currently works for a single scale but it is easy to extend to an image pyramid to enable detecting objects at any scale. Training images contain instances of the fully visible as well as partially occluded object. The algorithm works better if lots of occlusion cases are provided in the training images.</li>
+        <li>Based on the binary labels, HOG features are collected for both the object as well as all the occlusion that was seen during training. Also, the image is over segmented and the number of HOG cells in the same segment that were labelled differently is counted. Using these features, a <a href="http://svmlight.joachims.org/" target="_blank">Structural SVM</a> is used to learn HOG templates for the object and occlusion as well as a cost for HOG cells in the same segment to be labelled differently. Intuitively, we want the algorithm to discourage HOG cells in the same segment being labelled differently.</li>
+        <li>A sliding window approach is used for inference. At each location, a graph is constructed with HOG cells in the bounding box as nodes and edges between nodes that are in the same segment (this is possible because image segmentation is unsupervised). For each node, we want a binary label. The HOG template scores provide the unary potentials for the nodes, whereas the edge potential is learned from training image statistics as mentioned previously. A single graph-cut is sufficient to infer the binary labels from this information. The score of a bounding box location is the energy of the mincut.</li>
+    </ul>
+    <p>The figure below shows a sample image, its oversegmentation and the result produced by the algorithm.</p>
+
+    <p style="text-align:center"><img src="masters_thesis_process.png" class="img-rounded"></p>
+
+    <p>One could also use the DPM implementation to speed up the whole process. By training a normal DPM model for the object and running inference on the image first, 4 or 5 candidate regions can be collected. Depending on the degree of occlusion, the highest scoring DPM candidate might not be the correct detection. But by running the segmentation aware object detection algorithm on these candidates, and by re-scoring the DPM candidates with the scores from the segmentation-aware object detection object described above, one can often get the correct detection. This is the reason for the better P-R curve performance. The figure below shows one such case. The correct detection is ranked 4th by DPM but 1st by the segmenation-aware algorithm.</p>
+
+    <p style="text-align:center"><img src="rescore1.png"><img src="rescore2.png"></p>
+    <p style="text-align:center"><img src="rescore3.png"><img src="rescore4.png"></p>
+
+          <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; Samarth Manoj Brahmbhatt 2013, website created using <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></p>
+      </footer>
+
+    </div>
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bootstrap/docs-assets/js/holder.js"></script>
+  </body>
+</html>
