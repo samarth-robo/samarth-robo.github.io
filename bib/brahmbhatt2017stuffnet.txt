@@ -1,0 +1,8 @@
+@inproceedings{brahmbhatt2017stuffnet,
+  title={StuffNet: Using ‘Stuff’to Improve Object Detection},
+  author={Brahmbhatt, Samarth and Christensen, Henrik I and Hays, James},
+  booktitle={Applications of Computer Vision (WACV), 2017 IEEE Winter Conference on},
+  pages={934--943},
+  year={2017},
+  organization={IEEE}
+}
