@@ -1,0 +1,6 @@
+@article{brahmbhatt2017deepnav,
+  title={DeepNav: Learning to Navigate Large Cities},
+  author={Brahmbhatt, Samarth and Hays, James},
+  journal={arXiv preprint arXiv:1701.09135},
+  year={2017}
+}
