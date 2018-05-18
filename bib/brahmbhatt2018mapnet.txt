@@ -1,0 +1,6 @@
+@inproceedings{brahmbhatt2018mapnet,
+  title={Geometry-Aware Learning of Maps for Camera Localization},
+  author={Samarth Brahmbhatt and Jinwei Gu and Kihwan Kim and James Hays and Jan Kautz},
+  booktitle={IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2018}
+}
