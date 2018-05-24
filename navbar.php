@@ -1,3 +1,5 @@
+   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">     
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
@@ -16,3 +18,5 @@
             <li class="active"><a href="http://robocv.blogspot.com" target="_blank">Old Blog</a></li>
           </ul>
         </div>
+      </div>
+</div>
