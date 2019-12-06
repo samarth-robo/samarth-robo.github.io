@@ -4,6 +4,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="navbar.js"></script>
+  <script src="footer.js"></script>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +18,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
 
-  <body onload="create_navbar()">
+  <body onload="create_navbar(); create_footer();">
 
     <div w3-include-html="navbar.html"></div>
 
@@ -30,10 +31,14 @@
       </div>
       <div class="row">
         <div class="col" style="text-align: justify;">
+        <p>"<b>ContactPose: A Dataset of Grasps with Object Contact and Hand Pose</b>" - <b>Samarth Brahmbhatt</b>, Chengcheng Tang, Chris Twigg, Charles C. Kemp, and James Hays - under review
         <p>"<b>ContactGrasp: Functional Multi-finger Grasp Synthesis from Contact</b>" - <b>Samarth Brahmbhatt</b>, Ankur Handa, James Hays, and Dieter Fox - IROS 2019 | 
           <a href="https://arxiv.org/abs/1904.03754" target="_blank">paper</a> | 
           <a href="bib/brahmbhatt2019contactgrasp.txt" target="_blank">bib</a> | 
           <a href="https://contactdb.cc.gatech.edu/contactgrasp.html" target="_blank">website</a>
+        <p>"<b>Towards Markerless Grasp Capture</b>" - <b>Samarth Brahmbhatt</b>, Charles C. Kemp, and James Hays - CVPR 2019 Workshop on Computer Vision for AR/VR | 
+          <a href="https://arxiv.org/abs/1907.07388" target="_blank">paper</a> | 
+          <a href="https://contactdb.cc.gatech.edu/grasp_capture.html" target="_blank">website</a>
         <p>"<b>ContactDB: Analyzing and Predicting Grasp Contact via Thermal Imaging</b>" - <b>Samarth Brahmbhatt</b>, Cusuh Ham, Charles C. Kemp, James Hays - CVPR 2019 <font color="red">Oral, Best Paper Finalist</font> | 
           <a href="https://arxiv.org/abs/1904.06830" target="_blank">paper</a> | 
           <a href="bib/brahmbhatt2019contactdb.txt" target="_blank">bib</a> | 
@@ -73,12 +78,13 @@
         <p>"<b>RoboCup 2013 Humanoid Kidsize League Winner</b>" - Daniel D. Lee, Seung-Joon Yi, Stephen McGill, Yida Zhang, Larry Vadakedathu, <b>Samarth Brahmbhatt</b>, Richa Agrawal and Vibhavari Dasagi - RoboCup 2013: Robot World Cup XVII (Springer Berlin Heidelberg) | 
           <a href="research/robocup.html" target="_blank">website</a> |
           <a href="https://link.springer.com/chapter/10.1007/978-3-662-44468-9_5" target="_blank">paper</a></p>
-        <p>"<b>Practical OpenCV</b>" - Samarth Brahmbhatt. <a href="http://www.amazon.com/Practical-OpenCV-Samarth-Brahmbhatt/dp/1430260793/ref=pd_rhf_se_p_tnr_4" target="_blank">Amazon Link</a></p>
+        <p>"<b>Practical OpenCV</b>" - Samarth Brahmbhatt. Book published by Apress, more than <font color="red">82 K downloads</font> as of Dec 2019 |
+          <a href="https://www.apress.com/gp/book/9781430260790" target="_blank">Apress Link</a> |
+          <a href="http://www.amazon.com/Practical-OpenCV-Samarth-Brahmbhatt/dp/1430260793/ref=pd_rhf_se_p_tnr_4" target="_blank">Amazon Link</a></p>
       </div>
       </div>
       <hr>
-      <footer>
-        <script> var d = new Date(); document.write('<p>&copy; Samarth Manoj Brahmbhatt ' + d.getFullYear() + ', website created using <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></p>')</script>
+      <footer id='myfooter'>
       </footer>
     </div> <!-- /container -->
   </body>
