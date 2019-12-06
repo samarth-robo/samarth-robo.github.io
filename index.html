@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <script src="w3_include.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,83 +12,64 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Samarth Brahmbhatt's homepage</title>
+    <title>Samarth - Home</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="bootstrap/examples/jumbotron/jumbotron.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="{{ page.base_url }}docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
 
-  <body>
-
-    <div w3-include-html="navbar.html"></div>
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-4">
-                  <img src="samarth_cropped.png" class="img-rounded" height="300"> <br>
-              </div>
-              <div class="col-md-8">
-                <h1>Hello!</h1>
-                <p>Welcome to my homepage.</p> 
-                <p style="text-align:right">I am interested in making robots more intelligent by enabling them to better understand what they see.</p>
-                <p style="text-align:left">
-                  <a href="https://github.com/samarth-robo" target="_blank"><img src="GitHub_Logo.png" height="40"></a>
-                  <a href="https://scholar.google.com/citations?hl=en&user=4Me5raoAAAAJ&view_op=list_works&sortby=pubdate" target="_blank"><img src="Google_Scholar_logo.png" height="40"></a>
-                 </p>
-              </div>
+  <body onload="create_navbar(); create_footer();">
+    <div class="container">
+      <div class="row justify-content-between">
+          <div class="col-3 align-self-center">
+              <img src="samarth_cropped.png" class="w-100 img-responsive align-middle">
+          </div>
+          <div class="col-6 align-self-center">
+            <h3 style="text-align:justify">I am interested in making robots more intelligent by enabling them to better understand what they see.</h3>
+            <p style="text-align:center">
+              <a href="https://github.com/samarth-robo" target="_blank"><img src="GitHub_Logo.png" height="40"></a>
+              <a href="https://scholar.google.com/citations?hl=en&user=4Me5raoAAAAJ&view_op=list_works&sortby=pubdate" target="_blank"><img src="Google_Scholar_logo.png" height="40"></a>
+              </p>
+          </div>
+          <div class="col-3 align-self-center">
+              <img src="fromtheback.png" class="w-100 img-responsive align-middle">
           </div>
       </div>
-    </div>
-    
-    <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <img src="fromtheback.png" class="img-rounded" height="300" width="300">
+      
+      <div class="row">
+        <div class="col">
+          <h1>About Me</h1>
         </div>
-        <div class="col-md-6">
-            <div class="row">
-              <h1>Introduction</h1>
-              <p style="text-align:justify">I am a PhD Robotics student at Georgia Tech advised by <a href='http://www.cc.gatech.edu/~hays/' target="_blank">James Hays</a>. I also
-                work closely with <a href="http://charliekemp.com/" target="_blank">Charlie Kemp</a>.</p>
-              <p style="text-align:justify"> My PhD thesis is on observing and predicting hand-object interaction during human grasping, especially from
-                the contact perspective. I've also worked on robotic grasping, learning to navigate and localize agents in large environments,
-                object detection under occlusion, and object pose estimation. I was previously advised by
-                <a href="http://www.hichristensen.net/" target="_blank">Henrik Christensen</a>.</p>              
-              <p style="text-align:justify">I have a Masters degree in Robotics from the University of Pennsylvania,
-                where I had the pleasure to work with <a href='http://www.cis.upenn.edu/~kostas/' target="_blank">Kostas Daniilidis</a>.
-                Before that, I got a bachelor's degree in electronics and communication engineering from
-                <a href='www.nirmauni.ac.in/ITNU' target="_blank">Nirma University</a>, India.</p>
-            </div>
+      </div> 
+      
+      <div class="row">
+        <div class="col">
+          <p style="text-align:justify">I am a PhD Robotics student at Georgia Tech advised by <a href='http://www.cc.gatech.edu/~hays/' target="_blank">James Hays</a>. I also
+            work closely with <a href="http://charliekemp.com/" target="_blank">Charlie Kemp</a>.</p>
+          <p style="text-align:justify"> My PhD thesis is on observing and predicting <b>hand-object interaction</b> during human grasping, especially from
+            the <b>contact </b>perspective. I have also worked on <b>robotic grasping</b>, <b>learning to navigate</b> and <b>localize </b> agents in large environments,
+            object detection under occlusion, and object pose estimation. I was previously advised by
+            <a href="http://www.hichristensen.net/" target="_blank">Henrik Christensen</a>.</p>              
+          <p style="text-align:justify">I have a Masters degree in Robotics from the University of Pennsylvania,
+            where I had the pleasure to work with <a href='http://www.cis.upenn.edu/~kostas/' target="_blank">Kostas Daniilidis</a>.
+            Before that, I got a bachelor's degree in electronics and communication engineering from
+            <a href='www.nirmauni.ac.in/ITNU' target="_blank">Nirma University</a>, India.</p>
         </div>
-    </div>
-    
-    <div class="row">
-      <div class="col">
-        <h1>Research</h1>
       </div>
-    </div> 
+      
+      <div class="row">
+        <div class="col">
+          <h1>Research</h1>
+        </div>
+      </div> 
 
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 align-self-center">
           <a href="https://contactdb.cc.gatech.edu/grasp_capture.html" target="_blank">
               <img class="img-responsive w-100 align-middle" src="grasp_capture_teaser.png" alt="Markerless Grasp Capture">
           </a>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 align-self-center">
           <h2>Towards Markerless Grasp Capture <small>CVPR '19 Workshop on CV For AR/VR</small></h2>
           <p>Preliminary results on a completely markerless grasp (hand pose + object pose) capture algorithm.</p>
           <p>
@@ -96,10 +81,10 @@
       <hr class="featurette-divider">       
       
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 align-self-center">
             <a href="https://contactdb.cc.gatech.edu/contactgrasp.html" target="_blank"><img class="img-responsive w-100 align-middle" src="contactgrasp_teaser.png" alt="ContactGrasp"></a>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 align-self-center">
           <h2>ContactGrasp: Functional Multi-finger Grasp Synthesis from Contact <small>IROS 2019 | Summer Internship 2018 (NVIDIA Research, Seattle)</small></h2>
           <p>Functional grasp synthesis for kinematically diverse end-effectors, using human demonstrations of grasping from ContactDB.</p>
           <p>
@@ -112,10 +97,10 @@
       <hr class="featurette-divider"> 
       
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 align-self-center">
             <a href="https://contactdb.cc.gatech.edu" target="_blank"><img class="img-responsive w-100 align-middle" src="contactdb_teaser.png" alt="ContactDB"></a>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 align-self-center">
           <h2>ContactDB: Analyzing and Predicting Grasp Contact via Thermal Imaging <small>CVPR 2019 (<span style="color:red">Oral, Best Paper Finalist</span>) | Fall 2018</small></h2>
           <p>First-ever dataset of high-resolution contact during human grasping.</p>
           <p>
@@ -132,10 +117,10 @@
       <hr class="featurette-divider">      
       
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 align-self-center">
             <a href="https://arxiv.org/abs/1712.03342" target="_blank"><img class="img-responsive w-100 align-middle" src="mapnet_teaser.png" alt="Summer 2017"></a>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 align-self-center">
           <h2>Geometry-Aware Learning of Maps for Camera Localization <small>CVPR 2018 (<span style="color:red">Spotlight</span>) | Summer Internship 2017 (NVIDIA Research, Santa Clara)</small></h2>
           <p>Geometric constraints and semi-supervised learning for better image-based camera localization.</p>
           <p>
@@ -152,10 +137,10 @@
       <hr class="featurette-divider">
       
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 align-self-center">
             <a href="http://openaccess.thecvf.com/content_cvpr_2017/papers/Brahmbhatt_DeepNav_Learning_to_CVPR_2017_paper.pdf" target="_blank"><img class="img-responsive w-100 align-middle" src="deepnav_teaser.png" alt="arXiv"></a>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 align-self-center">
           <h2>DeepNav: Learning to Navigate Large Cities <small>CVPR 2017</small></h2>
           <p>Learning to navigate large cities by training convolutional neural networks to make a navigation decision from the current street-view image.</p>
           <p>
@@ -170,10 +155,10 @@
       <hr class="featurette-divider">      
       
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 align-self-center">
             <a href="https://doi.org/10.1109/WACV.2017.109" target="_blank"><img class="img-responsive w-100 align-middle" src="stuffnet_teaser.png" alt="WACV 2017"></a>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 align-self-center">
           <h2>StuffNet: Using 'Stuff' to Improve Object Detection <small>IEEE WACV 2017</small></h2>
           <p>Improving deep-learning object detection by looking at 'stuff' surrounding objects.</p>
           <p>
@@ -189,10 +174,10 @@
       <hr class="featurette-divider">
       
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 align-self-center">
             <a href="https://dx.doi.org/10.5244/C.29.80" target="_blank"><img class="img-responsive mx-auto d-block" src="research/bmvc2015.png" alt="BMVC 2015"></a>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 align-self-center">
           <h2>Occlusion-Aware Object Localization, Segmentation and Pose Estimation <small>BMVC 2015</small></h2>
           <p>Detection, segmentation and 3D pose estimation of partially occluded objects.</p>
           <p>
@@ -205,10 +190,10 @@
       <hr class="featurette-divider">
 
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 align-self-center">
             <a href="research/masters_thesis.html" target="_blank"><img class="img-responsive w-100 align-middle" src="research/masters_thesis_featurette.png" alt="Masters Thesis"></a>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 align-self-center">
           <h2>Masters' Thesis <small>Fall 2014</small></h2>
           <p>Detection and segmentation of partially occluded objects.</p>
           <p><a class="btn btn-primary" href="research/masters_thesis.html" role="button" target="_blank">Learn more</a></p>
@@ -217,10 +202,10 @@
       <hr class="featurette-divider">
 
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 align-self-center">
             <a href="research/summer_2013.html"><img class="img-responsive w-100 align-middle" src="research/summer2013_featurette.jpg" alt="PR2 Research"></a>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 align-self-center">
           <h2>3D Pose Estimation <small>Summer 2013 / ICRA 2014</small></h2>
           <p>We made GRASPY, Penn's PR2 robot detect and estimate the 6-DOF pose of household objects, all from one 2D image.</p>
           <p><a class="btn btn-primary" href="research/summer_2013.html" role="button">Learn more</a></p>
@@ -229,10 +214,10 @@
       <hr class="featurette-divider">
       
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 align-self-center">
             <a href="research/robocup.html"><img class="img-responsive w-100 align-middle" src="research/robocup_featurette.jpg" alt="Robocup"></a>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 align-self-center">
           <h2>RoboCup Kid Size League <small>Summer 2013</small></h2>
           <p>Our Team DARwIN won the Humanoid Kid Size League world championships.</p>
           <p><a class="btn btn-primary" href="research/robocup.html" role="button">Learn more</a></p>
@@ -241,10 +226,10 @@
       <hr class="featurette-divider">
 
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 align-self-center">
             <a href="research/summer_2011.html"><img class="img-responsive w-100 align-middle" src="research/summer2011_featurette.jpg" alt="Summer 2011"></a>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 align-self-center">
           <h2>Robotic Arm Control Using Kinect <small>Summer 2011</small></h2>
           <p>We used a Kinect to segment spherical and cylindrical objects lying on a table and guided a robotic arm to their 3D position.</p>
           <p><a class="btn btn-primary" href="research/summer_2011.html" role="button">Learn more</a></p>
@@ -252,17 +237,7 @@
       </div>
       <hr class="featurette-divider">
 
-      <footer>
-        <script> var d = new Date(); document.write('<p>&copy; Samarth Manoj Brahmbhatt ' + d.getFullYear() + ', website created using <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></p>')</script>
-      </footer>
+      <footer id='myfooter'></footer>
     </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>includeHTML();</script>
   </body>
 </html>

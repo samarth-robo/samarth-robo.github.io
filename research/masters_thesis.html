@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="../navbar.js"></script>
+  <script src="../footer.js"></script>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,61 +15,20 @@
     <title>Samarth - Masters' Thesis</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="{{ page.base_url }}docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Custom styles for this template -->
-    <link href="../bootstrap/examples/carousel/jumbotron.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
 
-  <body>
-      
-      <!-- NAVBAR
-================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="http://www.cc.gatech.edu/~sbrahmbh">Samarth</a>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="http://robocv.blogspot.com">Blog</a></li>
-            <li class="active"><a href="index.html">Acedemics</a></li>
-            <li class="active"><a href="../cv.pdf">CV</a></li>
-            <li class="active"><a href="../publications.html">Publications</a></li>
-            <li class="active"><a href="../extracurricular/index.html">Everything else</a></li>
-            <li class="active"><a href="../contact.html">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="jumbotron">
-      <div class="container">
-          <div class="row">
-              <h1>Detecting Partially Occluded Objects</h1>
-          </div>
-      </div>
-    </div>
-
+  <body onload="create_navbar('../'); create_footer();">
     <div class="container">
-    <div class="row">
+      <div class="row">
+        <div class="col">
+          <h1>Detecting Partially Occluded Objects</h1>
+        </div>
+      </div> 
+    <div class="row"><div class="col">
     <p>While collecting resuts for the <a href="summer_2013.html" target="_blank">project</a> on estimating pose from a single RGB image, we observed that our object detection and pose estimation algorithm was quite sensitive to the object being occluded from the front. Pose estimation because it depended directly on the edges and object detection because it used the dense HOG description of the object outlines. Of course, part-based object detectors are somewhat robust to occlusion but it still lowers the detector score. Such detections are easily discarded when a strict threshold is imposed to get high precision. In fact, this is true for almost all the object detection and pose estimation algorithms out there.</p>
 
-    <p>So for my Masters' Thesis I researched strategies to detect objects in spite of (partial) frontal occlusion. This research was heavily influenced by the <a href="seg_aware.pdf" target="_blank">paper</a> on segmentation aware object detection by Tianshi Gao et. al. and Machine Learning community literature on Structural SVMs. I was able to detect objects occluded up to 60%, and also segment the inside of the bounding box into object vs. non-object categories. Using this approach to detect objects, I was able to show better or equal performance (on P-R curves) than the stock DPM object detector on my household object datasets.</p>
+    <p>So for my Masters' Thesis I researched strategies to detect objects in spite of (partial) frontal occlusion. This research was heavily influenced by the <a href="https://ieeexplore.ieee.org/document/5995623" target="_blank">paper</a> on segmentation aware object detection by Tianshi Gao et. al. and Machine Learning community literature on Structural SVMs. I was able to detect objects occluded up to 60%, and also segment the inside of the bounding box into object vs. non-object categories. Using this approach to detect objects, I was able to show better or equal performance (on P-R curves) than the stock DPM object detector on my household object datasets.</p>
 
     <p style="text-align:center"><img src="masters_thesis_output.png" class="img-rounded"></p>
 
@@ -83,21 +47,9 @@
     <p style="text-align:center"><img src="rescore1.png"><img src="rescore2.png"></p>
     <p style="text-align:center"><img src="rescore3.png"><img src="rescore4.png"></p>
 
-          <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; Samarth Manoj Brahmbhatt 2013, website created using <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></p>
-      </footer>
+    <footer id='myfooter'></footer>
 
-    </div>
+    </div></div>
     </div><!-- /.container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../bootstrap/docs-assets/js/holder.js"></script>
   </body>
 </html>
