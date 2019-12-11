@@ -4,6 +4,7 @@ const navbar_page_ids = [
     'Publications',
     'CV',
     'Academics',
+    'Blog',
     'Quora Blog',
     'Old Blog',
 ];
@@ -12,6 +13,7 @@ const navbar_page_urls = [
     'publications.html',
     'cv.pdf',
     'academics.html',
+    'https://samarth-robo.github.io/blog/',
     'https://compvis.quora.com/',
     'http://robocv.blogspot.com',
 ];
