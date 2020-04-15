@@ -1,4 +1,12 @@
 // should match with document.title
+const navbar_page_titles = [
+    'Home',
+    'Ceremony & Reception',
+    'Accommodation & Transportation',
+    'Atlanta',
+    'Wedding Registry',
+    'Contact',
+];
 const navbar_page_ids = [
     'Home',
     'Ceremony & Reception',
@@ -55,7 +63,7 @@ function create_navbar() {
     let i;
     for (i=1; i<navbar_page_ids.length; i++) {
         let class_name = 'nav-item nav-link';
-        if (document.title === navbar_page_ids[i]) {
+        if (document.title === 'Samily: ' + navbar_page_titles[i]) {
             class_name += ' active';
         }
 
