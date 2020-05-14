@@ -5,8 +5,7 @@ const navbar_page_ids = [
     'CV',
     'Academics',
     'Blog',
-    'Quora Blog',
-    'Old Blog',
+    'Activities',
 ];
 const navbar_page_urls = [
     'index.html',
@@ -14,8 +13,7 @@ const navbar_page_urls = [
     'cv.pdf',
     'academics.html',
     'https://samarth-robo.github.io/blog/',
-    'https://compvis.quora.com/',
-    'http://robocv.blogspot.com',
+    'activities.html',
 ];
 
 function create_navbar(pref="") {
