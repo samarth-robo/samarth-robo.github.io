@@ -4,6 +4,6 @@ function create_footer() {
     const d = new Date();
 
     f.innerHTML = '<p>&copy; Samarth Manoj Brahmbhatt ' + d.getFullYear() + ', ' +
-        '<a href="https://github.com/samarth-robo/samarth-robo.github.io" target="_blank">website</a> ' +
+        '<a href="https://github.com/samarth-robo/samarth-robo.github.io">website</a> ' +
         'created using <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>.</p>'
 } 
