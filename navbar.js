@@ -62,7 +62,6 @@ function create_navbar(pref="") {
         let nav_item = document.createElement('a');
         nav_item.setAttribute('class', class_name);
         nav_item.setAttribute('href', pref+navbar_page_urls[i]);
-        nav_item.setAttribute('target', '_blank');
         nav_item.innerHTML = navbar_page_ids[i];
         navbar_nav.appendChild(nav_item);
     }
