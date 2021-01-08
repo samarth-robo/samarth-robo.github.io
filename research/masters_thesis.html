@@ -30,7 +30,7 @@
 
     <p>So for my Masters' Thesis I researched strategies to detect objects in spite of (partial) frontal occlusion. This research was heavily influenced by the <a href="https://ieeexplore.ieee.org/document/5995623" target="_blank">paper</a> on segmentation aware object detection by Tianshi Gao et. al. and Machine Learning community literature on Structural SVMs. I was able to detect objects occluded up to 60%, and also segment the inside of the bounding box into object vs. non-object categories. Using this approach to detect objects, I was able to show better or equal performance (on P-R curves) than the stock DPM object detector on my household object datasets.</p>
 
-    <p style="text-align:center"><img src="masters_thesis_output.png" class="img-rounded"></p>
+    <p style="text-align:center"><img src="masters_thesis_output.png" class="img-fluid"></p>
 
     <p>Details and algorithm descriptions can be found in my <a href="masters_thesis.pdf" target="_blank">thesis</a>. Broadly speaking, this is how it works:</p>
     <ul>
@@ -40,12 +40,12 @@
     </ul>
     <p>The figure below shows a sample image, its oversegmentation and the result produced by the algorithm.</p>
 
-    <p style="text-align:center"><img src="masters_thesis_process.png" class="img-rounded"></p>
+    <p style="text-align:center"><img src="masters_thesis_process.png" class="img-fluid"></p>
 
     <p>One could also use the DPM implementation to speed up the whole process. By training a normal DPM model for the object and running inference on the image first, 4 or 5 candidate regions can be collected. Depending on the degree of occlusion, the highest scoring DPM candidate might not be the correct detection. But by running the segmentation aware object detection algorithm on these candidates, and by re-scoring the DPM candidates with the scores from the segmentation-aware object detection object described above, one can often get the correct detection. This is the reason for the better P-R curve performance. The figure below shows one such case. The correct detection is ranked 4th by DPM but 1st by the segmenation-aware algorithm.</p>
 
-    <p style="text-align:center"><img src="rescore1.png"><img src="rescore2.png"></p>
-    <p style="text-align:center"><img src="rescore3.png"><img src="rescore4.png"></p>
+    <p style="text-align:center"><img src="rescore1.png" class="w-50 img-fluid"><img src="rescore2.png" class="w-50 img-fluid"></p>
+    <p style="text-align:center"><img src="rescore3.png" class="w-50 img-fluid"><img src="rescore4.png" class="w-50 img-fluid"></p>
 
     <footer id='myfooter'></footer>
 
