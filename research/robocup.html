@@ -26,13 +26,16 @@
         </div>
       </div> 
       <div class="row"><div class="col">
-      <p style="text-align:center"><img src="robocup_team.jpg" class="img-rounded"></p>
+      <p style="text-align:center"><img src="robocup_team.jpg" class="w-100 img-fluid"></p>
 
       <p>University of Pennsylvania's RoboCup Humanoid Kid Size Team has been winning the international championships for three years in a row now, <b>after we won it again in June 2013</b>!</p>
 
       <p><b>News! </b>Our team's <a href="https://link.springer.com/chapter/10.1007/978-3-662-44468-9_5" target="_blank">paper</a> "RoboCup 2013 Humanoid Kidsize League Winner" on teamplay strategies for robotic humanoid soccer has been accepted for presentation at the Robocup Symposium 2014 and will be published in the Springer book RoboCup 2013: Robot Soccer World Cup XVII. Here's our final match against the team from AIT Iran:
 
-      <p style="text-align:center"><iframe  width="560" height="315" src="https://www.youtube.com/embed/l0BnE1AtCTE" frameborder="0" allowfullscreen></iframe>
+      <p style="text-align:center">
+        <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/l0BnE1AtCTE" frameborder="0" allowfullscreen></iframe>
+        </div>
 
       <p> I joined the team in January 2013. Senior team members <a href=http://www.seas.upenn.edu/~smcgill3/>Steve</a>, SJ, Yida, Larry and Aditya provided us newcomers with an excellent tutorial series and introduced us to the immense code-base. As we got more comfortable we were assigned with specialized tasks, because there were a lot of new challenges in the 2013 edition of the competition. The RoboCup Federation, to further its intention of developing a robotic soccer team capable of competing and winning against an international human team by 2050, introduced the following changes in rules:
       <ul>
@@ -43,10 +46,10 @@
       <p>This meant that robot localization was not quite difficult - if a robot fell down near the center of the field and got up, it would often be confused about its orientation (because the field now looked the same on both sides) and hence try to score own goals.</p>
       <p>I was assigned the task of improving the particle-filter based localizing algorithm under guidance by SJ. We came up with a strategy in which the goal-keeper's ball estimate (which was relatively stable because it did not fall down too often) was used to disambiguate the orientation of a robot that fell down near the center of the field. This strategy came in handy quite a few times during the competition.</p>
       <p>We ran a lot of simulation matches using the Webots software to develop and perfect the strategy:</p>
-      <p style="text-align:center"><img src="robocup1.png" width=960 height=540></p>
-      <p style="text-align:center"><img src="robocup2.png" width=960 height=540></p>
-      <p style="text-align:center"><img src="robocup3.png" width=960 height=540></p>
-      <p style="text-align:center"><img src="robocup4.png" width=960 height=540></p>
+      <p style="text-align:center"><img src="robocup1.png" class="w-100 img-fluid"></p>
+      <p style="text-align:center"><img src="robocup2.png" class="w-100 img-fluid"></p>
+      <p style="text-align:center"><img src="robocup3.png" class="w-100 img-fluid"></p>
+      <p style="text-align:center"><img src="robocup4.png" class="w-100 img-fluid"></p>
       <br>The pictures above show a robot falling down, picking up the wrong orientation and then being corrected by the goal-keeper.</p>
 
       <p>During the tournament I was also reponsible for making colortables, which are the look-up tables for color-based segmentation that we generate using our excellent color learning tool that uses Gaussian Mixture Models to classify colors into field, goalpost, ball, field lines etc.</p>
