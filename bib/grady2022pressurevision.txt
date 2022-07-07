@@ -1,0 +1,6 @@
+@InProceedings{grady2022pressurevision,
+author = {Grady, Patrick and Tang, Chengcheng and Brahmbhatt, Samarth and Twigg, Christopher D. and Wan, Chengde and Hays, James and Kemp, Charles C.},
+title = {{PressureVision}: Estimating Hand Pressure from a Single RGB Image},
+booktitle = {European Conference on Computer Vision (ECCV)},
+year = {2022}
+}

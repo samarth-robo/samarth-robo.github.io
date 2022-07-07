@@ -1,4 +1,4 @@
-@InProceedings{Grady_2021_CVPR,
+@InProceedings{grady2021contactopt,
 author = {Grady, Patrick and Tang, Chengcheng and Twigg, Christopher D. and Vo, Minh and Brahmbhatt, Samarth and Kemp, Charles C.},
 title = {{ContactOpt}: Optimizing Contact to Improve Grasps},
 booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},

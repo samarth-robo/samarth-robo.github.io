@@ -1,0 +1,6 @@
+@InProceedings{grady2022vpec,
+author = {Grady, Patrick and Collins, Jeremy A. and Brahmbhatt, Samarth and Twigg, Christopher D. and Tang, Chengcheng and Hays, James and Kemp, Charles C.},
+title = {Visual Pressure Estimation and Control for Soft Robotic Grippers},
+booktitle = {2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+year = {2022}
+}
