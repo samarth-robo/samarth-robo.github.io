@@ -1,0 +1,7 @@
+@InProceedings{Brahmbhatt_2023_ICRA,
+author = {Brahmbhatt, Samarth and Deka, Ankur and Spielberg, Andrew and M{\"u}ller, Matthias},
+title = {Zero-Shot Transfer of Haptics-based Object Insertion Policies},
+booktitle = {International Conference on Robotics and Automation (ICRA)},
+month = {June},
+year = {2023}
+}
