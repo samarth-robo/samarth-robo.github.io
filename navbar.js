@@ -1,11 +1,14 @@
 // should match with document.title
 const navbar_page_ids = [
-    'Home',
+    'Samarth Brahmbhatt',
     'Publications',
     'CV',
     'Academics',
     'Blog',
     'Activities',
+    'GitHub',
+    'Google Scholar',
+    'E-mail'
 ];
 const navbar_page_urls = [
     'index.html',
@@ -14,6 +17,9 @@ const navbar_page_urls = [
     'academics.html',
     'https://samarth-robo.github.io/blog/',
     'activities.html',
+    'https://github.com/samarth-robo',
+    'https://scholar.google.com/citations?hl=en&user=4Me5raoAAAAJ&view_op=list_works&sortby=pubdate',
+    'email.txt'
 ];
 
 function create_navbar(pref="") {
@@ -27,7 +33,7 @@ function create_navbar(pref="") {
     let navbar_brand = document.createElement('a');
     navbar_brand.setAttribute('class', 'navbar-brand');
     navbar_brand.setAttribute('href', pref+navbar_page_urls[0]);
-    navbar_brand.innerHTML = 'Home';
+    navbar_brand.innerHTML = 'Samarth Brahmbhatt';
     navbar.appendChild(navbar_brand);
 
     let navbar_toggler = document.createElement('button');
