@@ -1,0 +1,7 @@
+@article{yang2024unkidnappable,
+  title={The Un-Kidnappable Robot: Acoustic Localization of Sneaking People},
+  author={Yang, Mengyu and Grady, Patrick and Brahmbhatt, Samarth and Vasudevan, Arun Balajee and Kemp, Charles C and Hays, James},
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  month = {May},
+  year = {2024}
+}

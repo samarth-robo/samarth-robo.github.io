@@ -1,0 +1,7 @@
+@article{mueller2024openbot,
+  title={OpenBot-Fleet: A System for Collective Learning with Real Robots},
+  author={M{\"u}ller, Matthias and Brahmbhatt, Samarth and Deka, Ankur and Leboutet, Quentin and Hafner, David and Koltun, Vladlen},
+  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  month = {May},
+  year = {2024}
+}
