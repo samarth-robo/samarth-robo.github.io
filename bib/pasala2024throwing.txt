@@ -1,0 +1,10 @@
+@ARTICLE{10681644,
+  author={Pasala, Haasith Venkata Sai and Govindan, Nagamanikandan and Brahmbhatt, Samarth},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={Identification and Learning-Based Control of an End-Effector for Targeted Throwing}, 
+  year={2024},
+  volume={9},
+  number={11},
+  pages={9558-9564},
+  keywords={Robots;End effectors;Motors;Grasping;Gears;Solid modeling;Service robots;Grippers and other end-effectors;throwing manipulation;model learning for control;mechanism design;and system identification},
+  doi={10.1109/LRA.2024.3462250}}
