@@ -1,0 +1,6 @@
+@article{pathre2024imagine2servo,
+  title={Imagine2Servo: Intelligent Visual Servoing with Diffusion-Driven Goal Generation for Robotic Tasks},
+  author={Pathre, Pranjali and Gupta, Gunjan and Qureshi, M. Nomaan and Brunda, Mandyam and Brahmbhatt, Samarth and Krishna, K. Madhava},
+  booktitle = {2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year = {2024}
+}
